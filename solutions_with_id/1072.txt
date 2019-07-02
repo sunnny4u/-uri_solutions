@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main ()
+{
+    int arr[10000],i,n,a=0,b=0;
+    scanf("%d",&n);
+    for(i = 0;i < n;i++){
+        scanf("%d",&arr[i]);
+    }
+    for(i = 0;i < n;i++){
+        if (arr[i] >= 10 && arr[i] <= 20)a++;
+        else b++;
+    }
+    printf("%d in\n",a);
+    printf("%d out\n",b);
+    return 0;
+}

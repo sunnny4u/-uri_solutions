@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int n,i,j,t;
+    char string[52];
+    scanf("%d",&t);
+    while(t){
+        scanf("%d",&n);
+        getchar();
+        int count = 0;
+        for(j = 0;j < n;j++){
+                gets(string);
+                for(i = 0;string[i];i++){
+                    count += (string[i]-65) + i + j;
+                }
+        }
+        printf("%d\n",count);
+        t--;
+    }
+    return 0;
+}

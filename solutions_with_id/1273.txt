@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    int n;
+
+    while(1){
+        scanf("%d",&n);
+        getchar();
+        if(n==0)break;
+        char string[n+1][52];
+        int l,i,c=0;
+        //string input and find the lengthy string
+        for(i = 0;i < n;i++){
+            gets(string[i]);
+            l = strlen(string[i]);
+            if(l>=c)c = l;
+        }//finish
+        //print mirror
+        int space,j;
+        for(i = 0;i < n;i++){
+            space = c - strlen(string[i]);
+            for(j = 0;j < space;j++)
+                printf(" ");
+            puts(string[i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}

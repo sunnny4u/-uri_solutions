@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,k,N;
+    scanf("%d",&N);
+    i = 0;
+    j = 0;
+    k = 0;
+    if(N<60){
+        k = N;
+    }
+    else
+        j = N/60;
+        k = N - (j*60);
+        if(j>60){
+            i = j/60;
+            j = j - (i*60);
+        }
+        printf("%d:%d:%d\n",i,j,k);
+    return 0;
+}

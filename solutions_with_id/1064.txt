@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main()
+{
+    float temp=0,avg;
+    float arr[5];
+    int i,n,a=0;
+    n = 0;
+    for(i = 0;i < 6;i++){
+        scanf("%f",&arr[i]);
+    }
+    for(i = 0;i < 6;i++){
+        if (arr[i] > 0){
+            n = n + 1;
+            temp = temp + arr[i];
+        }
+        else a = a + 1;
+    }
+    avg = temp / n;
+    printf("%d valores positivos\n",n);
+    printf("%.1f\n",avg);
+    return 0;
+}

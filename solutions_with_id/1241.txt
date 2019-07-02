@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[1001],str1[1001];
+
+    int t,i,f,s,a,b,count;
+    scanf("%d",&t);
+    while(t){
+        scanf("%s %s",str,str1);
+        f = strlen(str);
+        s = strlen(str1);
+        if(s > f)printf("nao encaixa\n");
+        else if(f >= s){
+            a = f - s;
+            b = 0;
+            count = 0;
+            for(i = a;i < f;i++,b++){
+                if(str[i]==str1[b])
+                    count++;
+            }
+            if(count == s) printf("encaixa\n");
+            else printf("nao encaixa\n");
+        }t--;
+    }
+    return 0;
+}

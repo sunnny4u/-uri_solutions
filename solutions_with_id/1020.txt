@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+    int x,y,m,da,D;
+    scanf("%d",&D);
+    y = 0;
+    m = 0;
+    da = 0;
+    if (D<30){
+        da = D;
+    }
+    else if (D<365){
+            m = D/30;
+        da = D - (m*30);
+    }
+    else if(D>=365){
+        y = D/365;
+        x = D - (y*365);
+        if (x>=30){
+            m = x/30;
+            da = x -(m*30);
+        }
+        else{da = x;}
+    }
+
+        printf ("%d ano(s)\n",y);
+        printf ("%d mes(es)\n",m);
+        printf ("%d dia(s)\n",da);
+
+        return 0;
+}

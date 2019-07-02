@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<string.h>
+void sort(int letsort[2][27]);
+int main()
+{
+    int t;
+    char string[202];
+    scanf("%d",&t);
+    getchar();
+    while(t){
+        int letter[2][27]={ {97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122},
+                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}  };
+        gets(string);
+        int l = strlen(string);
+        int i,j;
+        for(i = 0;i < l;i++){
+                char c = string[i];
+                if(c >= 'A' && c <= 'Z' || c >='a' && c <= 'z'){
+                    if(c < 97) string[i] += 32;
+                }
+        }
+        for(i = 0;i < l;i++){
+            for(j = 0;j < 26;j++){
+                if(string[i]==letter[0][j]){
+                    letter[1][j]++;
+                }
+            }
+        }
+        sort(letter);
+        t--;
+    }
+
+    return 0;
+}
+
+void sort(int letsort[2][27])
+{
+    int i,j,temp;
+    for(i = 0;i < 26;i++){
+        for(j = 0;j < 25;j++){
+            if(letsort[1][j] < letsort[1][j+1]){
+                temp = letsort[1][j];
+                letsort[1][j] = letsort[1][j+1];
+                letsort[1][j+1] = temp;
+                temp = letsort[0][j];
+                letsort[0][j] = letsort[0][j+1];
+                letsort[0][j+1] = temp;
+            }
+        }
+    }
+    for(i = 0;i < 26;i++){
+        printf("%c",letsort[0][i]);
+        if(i < 25){
+            if(letsort[1][i] != letsort[1][i+1])break;
+        }
+    }
+    printf("\n");
+}

@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,p;
+    char a,ar[1002];
+    for(scanf("%d",&n);n!=0;scanf("%d",&n)){
+        scanf("%s",ar);
+        p=0;
+        for(i = 0;ar[i]!='\0';i++){
+            if(ar[i]=='D')p++;
+            else p--;
+        }
+        p%=4;
+        if(p==1)printf("L\n");
+        else if(p==-1)printf("O\n");
+        else if(p==2 || p==-2)printf("S\n");
+        else if(p==3)printf("O\n");
+        else if(p==-3)printf("L\n");
+        else printf("N\n");
+    }
+    return 0;
+}
